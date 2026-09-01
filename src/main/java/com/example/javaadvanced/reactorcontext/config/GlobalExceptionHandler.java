@@ -37,7 +37,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     public Mono<ResponseEntity<Map<String, Object>>> handleGeneric(Exception ex) {
         log.error("Unhandled exception", ex);
-        return errorResponse(HttpStatus.INTERNAL_SERVER_ERROR, "Đã có lỗi xảy ra, vui lòng thử lại sau");
+        return errorResponse(HttpStatus.INTERNAL_SERVER_ERROR, "Have an occur error");
     }
 
     private Mono<ResponseEntity<Map<String, Object>>> errorResponse(HttpStatus status, String message) {

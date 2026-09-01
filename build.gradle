@@ -40,12 +40,12 @@ dependencies {
     implementation 'org.springframework.kafka:spring-kafka'
     implementation "io.projectreactor.kafka:reactor-kafka:${reactorKafkaVersion}"
 
-    // Distributed tracing (OpenTelemetry qua Micrometer Tracing)
+    // Distributed tracing
     implementation 'io.micrometer:micrometer-tracing-bridge-otel'
     implementation 'io.opentelemetry:opentelemetry-exporter-zipkin'
     implementation 'io.micrometer:context-propagation'
 
-    // Metrics (Prometheus qua Actuator)
+    // Metrics (Prometheus by Actuator)
     runtimeOnly 'io.micrometer:micrometer-registry-prometheus'
 
     compileOnly 'org.projectlombok:lombok'

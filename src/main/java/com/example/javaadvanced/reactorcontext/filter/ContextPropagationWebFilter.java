@@ -33,7 +33,7 @@ public class ContextPropagationWebFilter implements WebFilter {
                 .filter(s -> !s.isBlank())
                 .orElseGet(() -> UUID.randomUUID().toString());
 
-        // Trả traceId lại cho client để dễ tra cứu (support, FE log...)
+        // return tenant Id for client trace (support, FE log...)
         exchange.getResponse().getHeaders().add(HEADER_TRACE_ID, traceId);
 
         log.debug("Incoming request {} {} - traceId={} tenantId={} userId={}",

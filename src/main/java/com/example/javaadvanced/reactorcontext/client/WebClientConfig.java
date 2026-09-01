@@ -11,6 +11,12 @@ import reactor.core.publisher.Mono;
 @Configuration
 public class WebClientConfig {
 
+
+    @Bean
+    public WebClient.Builder webClientBuilder() {
+        return WebClient.builder();
+    }
+
     @Bean
     public WebClient webClient(WebClient.Builder builder) {
         return builder
@@ -18,11 +24,6 @@ public class WebClientConfig {
                 .build();
     }
 
-    /**
-     * Tự thêm traceId/tenantId vào header khi gọi sang service khác,
-     * để service kia (nếu cũng dùng ContextPropagationWebFilter tương tự)
-     * tiếp tục nối dài được chuỗi trace.
-     */
     private ExchangeFilterFunction propagateContextHeaders() {
         return (request, next) -> Mono.deferContextual(ctx -> {
             ClientRequest.Builder builder = ClientRequest.from(request);
