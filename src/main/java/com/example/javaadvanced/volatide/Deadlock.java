@@ -1,4 +1,4 @@
-package volatide;
+package com.example.javaadvanced.volatide;
 
 public class Deadlock {
 

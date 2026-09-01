@@ -1,4 +1,4 @@
-package volatide;
+package com.example.javaadvanced.volatide;
 
 public class Volatide {
     volatile boolean running = true;

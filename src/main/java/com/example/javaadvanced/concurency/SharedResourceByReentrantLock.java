@@ -1,4 +1,4 @@
-package concurency;
+package com.example.javaadvanced.concurency;
 
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -18,7 +18,6 @@ public class SharedResourceByReentrantLock {
 
     public int getCounter() {
         return counter;
-
     }
 }
 

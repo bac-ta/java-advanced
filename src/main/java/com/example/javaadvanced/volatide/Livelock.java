@@ -1,4 +1,4 @@
-package volatide;
+package com.example.javaadvanced.volatide;
 
 class PoliteResource {
     private volatile boolean thread1Wants = false;
